@@ -6,17 +6,15 @@
         <div class="album py-5">
             <div class="container">
                 <div class="row infinite-container">
+                <div class="col-md-12">
+                <div class="card-columns">
                     {% for post in posts %}
-                        <div class="col-md-6 infinite-item">
-                            <div class="card mb-4 shadow-sm">
-                                <img class="img-thumbnail"  src="{{post.image.url}}"/>
-                                <div class="card-body">
-                                    <h5>{{post.title}}</h5>
-                                    <p class="card-text">{{post.description|truncatewords:20}}</p>
-                                </div>
-                            </div>
+                        <div class="card infinite-item">
+                                <img class="card-img-top img-thumbnail"  src="{{post.image.url}}"/>
                         </div>
                     {% endfor %}
+                    </div>
+                    </div>
                 </div>
                 {% if page_obj.has_next %}
                 <a class="infinite-more-link" href="?page={{ page_obj.next_page_number }}"></a>
@@ -29,6 +27,7 @@
             </div>
         </div>
 
+        
     <script src="/static/js/jquery-2.2.4.min.js"></script>
     <script src="/static/js/jquery.waypoints.min.js"></script>
     <script src="/static/js/infinite.min.js"></script>
